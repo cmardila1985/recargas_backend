@@ -1,4 +1,4 @@
-package com.inventory.demo.config;
+package com.datacenter.apirecargas.infrastruture.config;
 
  
 

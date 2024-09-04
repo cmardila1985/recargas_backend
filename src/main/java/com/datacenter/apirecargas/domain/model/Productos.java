@@ -1,4 +1,4 @@
-package com.inventory.demo.entity;
+package com.datacenter.apirecargas.domain.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

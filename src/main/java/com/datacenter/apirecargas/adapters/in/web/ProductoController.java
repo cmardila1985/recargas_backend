@@ -1,4 +1,4 @@
-package com.inventory.demo.controller;
+package com.datacenter.apirecargas.adapters.in.web;
 import java.util.Optional;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.inventory.demo.entity.Productos;
-import com.inventory.demo.service.ProductoService;
+import com.datacenter.apirecargas.application.service.ProductoService;
+import com.datacenter.apirecargas.application.service.RecargaService;
+import com.datacenter.apirecargas.domain.model.Productos;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +26,11 @@ public class ProductoController {
 
     @Autowired
     private ProductoService productoService;
+    
+    
+    @Autowired
+    private RecargaService recargaService;
+    
 
     @GetMapping("/productos")
     public List<Productos> obtenerTodosLosProductos() {
@@ -41,10 +47,7 @@ public class ProductoController {
         return productoService.guardarProducto(producto);
     }
 
-    @PutMapping("/actualizar/{id}")
-    public ResponseEntity<Productos> actualizarProducto(@PathVariable Long id, @RequestBody Productos producto) {
-        return productoService.actualizarProducto(id, producto);
-    }
+   
 
     @DeleteMapping("/eliminar/{id}")
     public void eliminarProducto(@PathVariable Long id) {
@@ -56,8 +59,5 @@ public class ProductoController {
         return productoService.calcularValorTotalInventario();
     }
     
-    @GetMapping("/combinaciones/{valor}")
-    public List<List<String>> calcularValorTotalInventario(@PathVariable Long valor) {
-        return productoService.obtenerCombinaciones(valor);
-    }
+    
 }

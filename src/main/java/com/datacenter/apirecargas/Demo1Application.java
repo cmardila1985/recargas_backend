@@ -1,4 +1,4 @@
-package com.inventory.demo;
+package com.datacenter.apirecargas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
