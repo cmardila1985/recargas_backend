@@ -2,32 +2,27 @@ package com.datacenter.apirecargas.application.dto;
 
   
 public class TotalRecargaDTO {
-    private String vendedor;             // Campo para el vendedor
-    private String operadorDescripcion;   // Campo para la descripción del operador
-    private Long total;                   // Campo para el total de recargas
+    private Long cantidadRecargas;         // Campo para la cantidad de recargas
+    private Long total;                    // Campo para el total de recargas
+    private String operador;                   // Campo para el operador
+    private String vendedor;                   // Campo para el vendedor
 
     // Constructor que acepta los parámetros correctos
-    public TotalRecargaDTO(String vendedor, String operadorDescripcion, Long total) {
-        this.vendedor = vendedor;
-        this.operadorDescripcion = operadorDescripcion;
+    public TotalRecargaDTO(Long cantidadRecargas, Long total, String operador, String vendedor) {
+        this.cantidadRecargas = cantidadRecargas;
         this.total = total;
-    }
-
-    // Getters y Setters
-    public String getVendedor() {
-        return vendedor;
-    }
-
-    public void setVendedor(String vendedor) {
+        this.operador = operador;
         this.vendedor = vendedor;
     }
 
-    public String getOperadorDescripcion() {
-        return operadorDescripcion;
+ 
+
+    public Long getCantidadRecargas() {
+        return cantidadRecargas;
     }
 
-    public void setOperadorDescripcion(String operadorDescripcion) {
-        this.operadorDescripcion = operadorDescripcion;
+    public void setCantidadRecargas(Long cantidadRecargas) {
+        this.cantidadRecargas = cantidadRecargas;
     }
 
     public Long getTotal() {
@@ -36,5 +31,21 @@ public class TotalRecargaDTO {
 
     public void setTotal(Long total) {
         this.total = total;
+    }
+
+    public String getOperador() {
+        return operador;
+    }
+
+    public void setOperador(String operador) {
+        this.operador = operador;
+    }
+
+    public String getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(String vendedor) {
+        this.vendedor = vendedor;
     }
 }
