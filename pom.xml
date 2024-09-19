@@ -22,6 +22,9 @@
 	        <plugin>
 	            <groupId>org.springframework.boot</groupId>
 	            <artifactId>spring-boot-maven-plugin</artifactId>
+	             <configuration>
+                	<mainClass>com.datacenter.apirecargas.Demo1Application</mainClass> <!-- Clase principal -->
+	            </configuration>
 	        </plugin>
 	    </plugins>
     </build>
